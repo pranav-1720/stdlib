@@ -389,11 +389,7 @@ jobs:
 
       # Create sub-issue for C linting failures:
       - name: 'Create sub-issue for C lint failures'
-<<<<<<< HEAD
         if: ( github.event.inputs.c != 'false' ) && failure() && contains(steps.*.outcome, 'failure') && contains(steps.lint-c.outcome, 'failure')
-=======
-        if: ( github.event.inputs.c != 'false' ) && failure() && contains(steps.*.outcome, 'failure') && contains(job.steps.*.name, 'Lint C files')
->>>>>>> temp
         env:
           GITHUB_TOKEN: ${{ secrets.STDLIB_BOT_GITHUB_TOKEN }}
         run: |
